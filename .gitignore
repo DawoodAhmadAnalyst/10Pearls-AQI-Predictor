@@ -1,0 +1,60 @@
+# ---- Secrets & environment variables ----
+.env
+.env.*
+*.pem
+*token*
+*secret*
+!requirements*.txt
+
+# ---- Hopsworks / API keys ----
+hopsworks_api_key.txt
+.hw_key
+*.apikey
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Virtual environments ----
+venv/
+env/
+.venv/
+ENV/
+
+# ---- Jupyter Notebook ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- Data files (raw/backfilled data can be large; keep repo light) ----
+data/raw/
+data/processed/
+*.csv
+*.parquet
+!data/sample_*.csv
+
+# ---- Model artifacts (these belong in Hopsworks Model Registry, not Git) ----
+*.pkl
+*.joblib
+*.h5
+*.pt
+models/
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- OS/IDE clutter ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Logs ----
+*.log
+logs/

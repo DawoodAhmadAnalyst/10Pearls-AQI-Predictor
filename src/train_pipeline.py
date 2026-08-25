@@ -67,7 +67,11 @@ def load_feature_data(fs):
     # briefly wrote forecasted, not observed, future data) inflating
     # df['time'].max() and skewing the split date, or sneaking synthetic
     # rows into the test set. Cheap insurance, worth keeping permanently.
-    now = pd.Timestamp.now()
+    #
+    # Data read back from Hopsworks comes back tz-aware (UTC) -- unlike the
+    # raw Open-Meteo fetch in feature_pipeline.py, which is naive. "now" must
+    # match that here, or pandas raises a tz-naive vs tz-aware TypeError.
+    now = pd.Timestamp.now(tz="UTC")
     before = len(df)
     df = df[df["time"] <= now].reset_index(drop=True)
     dropped = before - len(df)

@@ -1,13 +1,3 @@
-"""
-feature_pipeline.py
-
-Core feature engineering logic for the Pearls AQI Predictor (Multan).
-Used by BOTH the live (twice-hourly) pipeline and the historical backfill script,
-so any fix/change here automatically applies to both.
-
-Data source: Open-Meteo (Weather API + Air Quality API), coordinate-based.
-"""
-
 import numpy as np
 import pandas as pd
 import requests

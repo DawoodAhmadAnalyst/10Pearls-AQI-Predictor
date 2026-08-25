@@ -58,3 +58,5 @@ Thumbs.db
 # ---- Logs ----
 *.log
 logs/
+
+hopsworks-certs/

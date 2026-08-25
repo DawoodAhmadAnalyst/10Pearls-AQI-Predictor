@@ -1,4 +1,4 @@
-hopsworks==5.0.4
+hopsworks[python]==5.0.4
 pandas
 numpy
 scikit-learn

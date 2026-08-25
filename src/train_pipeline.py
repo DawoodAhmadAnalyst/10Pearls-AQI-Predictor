@@ -3,11 +3,12 @@ import shutil
 import joblib
 import numpy as np
 import pandas as pd
-from dotenv import load_dotenv
 import hopsworks
+from dotenv import load_dotenv
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
 load_dotenv()
 
 # ---------------------------------------------------------------------------
@@ -60,6 +61,19 @@ def load_feature_data(fs):
     fg = fs.get_feature_group(name=FEATURE_GROUP_NAME, version=FEATURE_GROUP_VERSION)
     df = fg.read()
     df = df.sort_values("time").reset_index(drop=True)
+
+    # Safety filter: drop any row timestamped later than right now. Protects
+    # against forecast-contaminated rows (e.g. from a live-pipeline bug that
+    # briefly wrote forecasted, not observed, future data) inflating
+    # df['time'].max() and skewing the split date, or sneaking synthetic
+    # rows into the test set. Cheap insurance, worth keeping permanently.
+    now = pd.Timestamp.now()
+    before = len(df)
+    df = df[df["time"] <= now].reset_index(drop=True)
+    dropped = before - len(df)
+    if dropped > 0:
+        print(f"Dropped {dropped} row(s) with a future timestamp (> {now}) before training.")
+
     return df
 
 

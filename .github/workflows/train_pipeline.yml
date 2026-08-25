@@ -1,0 +1,27 @@
+name: Training Pipeline (Daily)
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # runs once daily at 02:00 UTC
+  workflow_dispatch:        # allows manual trigger from the Actions tab
+
+jobs:
+  run-training-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run training pipeline
+        env:
+          AQI_Predictor_KEY: ${{ secrets.AQI_PREDICTOR_KEY }}
+        run: python src/train_pipeline.py

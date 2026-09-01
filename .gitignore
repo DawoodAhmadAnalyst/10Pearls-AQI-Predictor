@@ -10,6 +10,7 @@
 hopsworks_api_key.txt
 .hw_key
 *.apikey
+hopsworks-certs/
 
 # ---- Python ----
 __pycache__/
@@ -27,6 +28,7 @@ venv/
 env/
 .venv/
 ENV/
+10pearls_venv/
 
 # ---- Jupyter Notebook ----
 .ipynb_checkpoints/
@@ -58,5 +60,3 @@ Thumbs.db
 # ---- Logs ----
 *.log
 logs/
-
-hopsworks-certs/

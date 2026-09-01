@@ -1,7 +1,9 @@
+streamlit
 hopsworks[python]==5.0.4
+joblib
 pandas
 numpy
-scikit-learn
-joblib
-requests
+plotly
 python-dotenv
+shap
+scikit-learn

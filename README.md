@@ -6,6 +6,45 @@ Live weather and air-quality data is pulled hourly from Open-Meteo, engineered i
 
 For the full write-up — EDA findings, model comparison, the data-quality issues hit along the way, and what was learned — see `Reports/`.
 
+## Technologies used
+
+*Click any icon to visit that technology's homepage.*
+
+**Data source**
+
+[![Open-Meteo](https://img.shields.io/badge/Open--Meteo-1A5276?style=for-the-badge)](https://open-meteo.com/)
+
+**Language & core libraries**
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-006400?style=for-the-badge)](https://xgboost.readthedocs.io/)
+[![joblib](https://img.shields.io/badge/joblib-4B8BBE?style=for-the-badge)](https://joblib.readthedocs.io/)
+[![SHAP](https://img.shields.io/badge/SHAP-8A2BE2?style=for-the-badge)](https://shap.readthedocs.io/)
+
+**Feature Store & Model Registry**
+
+[![Hopsworks](https://img.shields.io/badge/Hopsworks-1F4E5F?style=for-the-badge)](https://www.hopsworks.ai/)
+
+**Automation**
+
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![GitHub Secrets](https://img.shields.io/badge/GitHub_Secrets-181717?style=for-the-badge&logo=github&logoColor=white)](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions)
+
+**Dashboard & deployment**
+
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/python/)
+[![Apache Kafka (librdkafka)](https://img.shields.io/badge/librdkafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)](https://github.com/confluentinc/librdkafka)
+[![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white)](https://fonts.google.com/)
+
+**Environment & config**
+
+[![python-dotenv](https://img.shields.io/badge/python--dotenv-ECD53F?style=for-the-badge&logo=python&logoColor=black)](https://pypi.org/project/python-dotenv/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+
 ## Architecture
 
 ```
